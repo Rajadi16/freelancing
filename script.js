@@ -1,5 +1,5 @@
 const CLINIC_INFO = {
-  name: "Dr Harsha's Skin Care & Cosmetology Centre",
+  name: "Dr Harsha Dermatology & Skin Laser Clinic",
   doctor: "Dr. Harshavardhan Gowda H",
   title: "MBBS, MD DVL",
   phone: "+918050404377",
@@ -83,7 +83,7 @@ function setupShare() {
 
   const shareData = {
     title: CLINIC_INFO.name,
-    text: `Consult with ${CLINIC_INFO.doctor} (${CLINIC_INFO.title})`,
+    text: `Consult dermatologist ${CLINIC_INFO.doctor} (${CLINIC_INFO.title})`,
     url: window.location.href
   };
 
