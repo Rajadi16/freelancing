@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr Harsha's Skin Care & Cosmetology Centre - Dermatology, cosmetology and advanced skin treatments.">
+  <title>Dr Harsha's Skin Care & Cosmetology Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Dr Harsha's Skin Care & Cosmetology Centre home">
+        <span class="brand-mark">D</span>
+        <span class="brand-text">Dr Harsha's Skin Care</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="#services">Services</a>
+        <a href="#treatment-gallery">Gallery</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#appointment">Appointment</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="home" class="hero section">
+      <div class="hero-glow hero-glow-left" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-right" aria-hidden="true"></div>
+
+      <div class="container hero-layout">
+        <div class="hero-content reveal">
+          <p class="eyebrow">Skin Care & Cosmetology Centre</p>
+          <h1>Healthy Skin. Confident You.</h1>
+          <p class="hero-subtitle">
+            Advanced dermatology, cosmetology, and skin surgery care by
+            <strong>Dr. Harshavardhan Gowda H</strong> (MBBS, MD DVL).
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+918050404377">Call Now</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/918050404377" target="_blank" rel="noreferrer noopener">WhatsApp</a>
+            <button id="save-contact" class="btn btn-secondary" type="button">Save Contact</button>
+            <button id="share-profile" class="btn btn-light" type="button">Share</button>
+          </div>
+
+          <div class="hero-meta">
+            <span>Consultation by appointment</span>
+            <span class="dot"></span>
+            <a href="https://goo.gl/maps/WtDzHtQndskutmgf6" target="_blank" rel="noreferrer noopener">Open location on map</a>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal">
+          <h2>Quick Clinic Info</h2>
+          <ul>
+            <li>Comprehensive skin, hair, and aesthetic care</li>
+            <li>Personalized treatment plans</li>
+            <li>Dermatosurgery and cosmetology services</li>
+            <li>Easy connect via call and WhatsApp</li>
+          </ul>
+
+          <a class="map-cta" href="https://goo.gl/maps/WtDzHtQndskutmgf6" target="_blank" rel="noreferrer noopener">
+            Get Directions
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Facilities Available</p>
+          <h2>Treatments & Services</h2>
+          <p>Search and quickly find the right treatment category.</p>
+          <label class="search-wrap" for="service-search">
+            <span>Search Services</span>
+            <input id="service-search" type="search" placeholder="e.g. acne, PRP, laser, psoriasis">
+          </label>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal" data-service-card>
+            <h3>Cosmetology Services</h3>
+            <ul>
+              <li>Glow Peel</li>
+              <li>PRP</li>
+              <li>Laser Treatment</li>
+              <li>Hair Removal Laser</li>
+              <li>Dermaroller</li>
+              <li>Botox</li>
+              <li>Fillers</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal" data-service-card>
+            <h3>Dermatosurgery</h3>
+            <ul>
+              <li>Electrocautery</li>
+              <li>Mole Excision</li>
+              <li>Cyst Excision</li>
+              <li>Nail Surgery</li>
+              <li>Hair Transplantation</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal" data-service-card>
+            <h3>Clinical Dermatology</h3>
+            <ul>
+              <li>Acne (Pimples)</li>
+              <li>Vitiligo</li>
+              <li>Lichen Planus</li>
+              <li>Psoriasis</li>
+              <li>Eczema</li>
+              <li>Urticaria</li>
+              <li>Keloid</li>
+              <li>Light Reactions</li>
+              <li>Sexually Transmitted Diseases</li>
+            </ul>
+          </article>
+        </div>
+
+        <div id="treatment-gallery" class="treatment-gallery-wrap">
+          <div class="section-head reveal treatment-head">
+            <p class="eyebrow">Visual Guide</p>
+            <h2>Treatment Photo Gallery</h2>
+            <p>Aesthetic treatment visuals mapped to the procedures available at the clinic.</p>
+          </div>
+
+          <div class="treatment-gallery">
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-shvetsa-5069437.jpg" alt="Acne treatment consultation with dermatologist" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>Acne Treatment</h3>
+                <p>Medical acne care and customized skin recovery plans.</p>
+              </div>
+            </article>
+
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-shvetsa-5069423.jpg" alt="PRP skin rejuvenation procedure" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>PRP Therapy</h3>
+                <p>Platelet-rich plasma based rejuvenation for skin and scalp.</p>
+              </div>
+            </article>
+
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-shvetsa-4586740.jpg" alt="Laser dermatology treatment setup" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>Laser Treatment</h3>
+                <p>Advanced laser procedures for pigmentation, scars, and texture.</p>
+              </div>
+            </article>
+
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-shvetsa-4586718.jpg" alt="Laser hair removal treatment session" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>Hair Removal Laser</h3>
+                <p>Precision laser hair reduction for smoother long-term results.</p>
+              </div>
+            </article>
+
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-gustavo-fring-7446676.jpg" alt="Cosmetology injectable treatment planning" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>Botox & Fillers</h3>
+                <p>Subtle facial enhancement treatments with clinical precision.</p>
+              </div>
+            </article>
+
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-gustavo-fring-7446672.jpg" alt="Hair transplantation clinical procedure" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>Hair Transplantation</h3>
+                <p>Modern techniques for natural hairline restoration.</p>
+              </div>
+            </article>
+
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-gustavo-fring-3985314.jpg" alt="Minor dermatosurgery setup in clinic" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>Dermatosurgery</h3>
+                <p>Mole, cyst, and nail procedures under expert dermatologic care.</p>
+              </div>
+            </article>
+
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-gustavo-fring-3985305.jpg" alt="Clinical skin examination for chronic skin condition" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>Psoriasis & Eczema</h3>
+                <p>Long-term management plans to reduce flare-ups and discomfort.</p>
+              </div>
+            </article>
+
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-cottonbro-7581585.jpg" alt="Vitiligo diagnosis and treatment consultation" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>Vitiligo Care</h3>
+                <p>Diagnosis-led repigmentation and ongoing monitoring protocols.</p>
+              </div>
+            </article>
+
+            <article class="treatment-photo-card reveal">
+              <img src="images/pexels-cottonbro-7581091.jpg" alt="Clinical skin treatment setup" loading="lazy" decoding="async">
+              <div class="treatment-photo-content">
+                <h3>Clinical Skin Care</h3>
+                <p>Personalized dermatology care in a modern clinical setting.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p id="service-empty" class="service-empty" hidden>No matching services found. Try another keyword.</p>
+      </div>
+    </section>
+
+    <section id="why-us" class="section why-us">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Why Choose Us</p>
+          <h2>Care Designed Around You</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <h3>Evidence-Based Treatment</h3>
+            <p>Diagnosis-first approach with clinically guided treatment options.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Modern Procedures</h3>
+            <p>From laser therapies to advanced dermatosurgery with care and precision.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Follow-Up Focus</h3>
+            <p>Clear after-care guidance and follow-up for better treatment outcomes.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Fast Communication</h3>
+            <p>Easy appointment queries and clinic support through WhatsApp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="appointment" class="section appointment">
+      <div class="container appointment-layout">
+        <div class="appointment-copy reveal">
+          <p class="eyebrow">Book Appointment</p>
+          <h2>Send Appointment Request in 1 Minute</h2>
+          <p>Fill details below. On submit, your request opens in WhatsApp for quick confirmation.</p>
+        </div>
+
+        <form id="appointment-form" class="appointment-form reveal" novalidate>
+          <label>
+            Full Name
+            <input type="text" name="name" required placeholder="Your name">
+          </label>
+          <label>
+            Phone Number
+            <input type="tel" name="phone" required placeholder="+91">
+          </label>
+          <label>
+            Preferred Date
+            <input id="preferred-date" type="date" name="date" required>
+          </label>
+          <label>
+            Skin Concern
+            <textarea name="concern" required rows="4" placeholder="Describe your concern"></textarea>
+          </label>
+          <button class="btn btn-primary form-submit" type="submit">Send on WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="faq" class="section faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">FAQs</p>
+          <h2>Common Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Do I need prior appointment?
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Appointments are recommended to reduce waiting time and ensure smooth consultation.</p>
+            </div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Are cosmetology procedures same-day?
+            </button>
+            <div class="faq-answer" hidden>
+              <p>Suitability depends on diagnosis. Some procedures can be same-day, others may need preparation.</p>
+            </div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              How do I share previous reports?
+            </button>
+            <div class="faq-answer" hidden>
+              <p>You can send reports and images securely on WhatsApp before your appointment.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <article class="contact-card reveal">
+          <h3>Call</h3>
+          <a href="tel:+918050404377">+91 80504 04377</a>
+        </article>
+        <article class="contact-card reveal">
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/918050404377" target="_blank" rel="noreferrer noopener">Message Now</a>
+        </article>
+        <article class="contact-card reveal">
+          <h3>Location</h3>
+          <a href="https://goo.gl/maps/WtDzHtQndskutmgf6" target="_blank" rel="noreferrer noopener">Open Google Maps</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Dr Harsha's Skin Care & Cosmetology Centre</p>
+      <p>Designed for better accessibility, speed, and mobile experience.</p>
+    </div>
+  </footer>
+
+  <div class="mobile-bar" aria-label="Quick actions">
+    <a href="tel:+918050404377">Call</a>
+    <a href="https://wa.me/918050404377" target="_blank" rel="noreferrer noopener">WhatsApp</a>
+    <a href="https://goo.gl/maps/WtDzHtQndskutmgf6" target="_blank" rel="noreferrer noopener">Map</a>
+  </div>
+
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
