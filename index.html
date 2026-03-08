@@ -13,9 +13,17 @@
   <link rel="dns-prefetch" href="//www.google-analytics.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="images/pexels-shvetsa-5069437.webp">
-  <link rel="preload" as="image" href="images/pexels-shvetsa-5069423.webp">
+
+  <!-- FIX 1: Load font with display=swap to prevent render blocking -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- FIX 2: Preload hero images with correct type hint -->
+  <link rel="preload" as="image" href="images/pexels-shvetsa-5069437.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/pexels-shvetsa-5069423.webp" type="image/webp">
+
   <link rel="preload" as="style" href="styles.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
@@ -147,8 +155,10 @@
           </div>
 
           <div class="treatment-gallery">
+
+            <!-- FIX 3: First 2 gallery images are likely visible on load — eager + high priority -->
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-shvetsa-5069437.webp" alt="Acne treatment consultation with dermatologist" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-shvetsa-5069437.webp" alt="Acne treatment consultation with dermatologist" width="1200" height="800" loading="eager" fetchpriority="high" decoding="sync">
               <div class="treatment-photo-content">
                 <h3>Acne and Acne Scar Care</h3>
                 <p>Structured treatment plans to reduce inflammation, marks, and relapses.</p>
@@ -156,15 +166,16 @@
             </article>
 
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-shvetsa-5069423.webp" alt="PRP skin rejuvenation procedure" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-shvetsa-5069423.webp" alt="PRP skin rejuvenation procedure" width="1200" height="800" loading="eager" fetchpriority="high" decoding="sync">
               <div class="treatment-photo-content">
                 <h3>PRP for Hair and Skin</h3>
                 <p>Targeted PRP sessions for scalp density and skin rejuvenation.</p>
               </div>
             </article>
 
+            <!-- FIX 4: Remaining gallery images — lazy + low priority so they don't compete -->
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-shvetsa-4586740.webp" alt="Laser dermatology treatment setup" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-shvetsa-4586740.webp" alt="Laser dermatology treatment setup" width="1200" height="800" loading="lazy" fetchpriority="low" decoding="async">
               <div class="treatment-photo-content">
                 <h3>Pigmentation Laser Therapy</h3>
                 <p>Laser-based correction for uneven tone, melasma, and post-acne marks.</p>
@@ -172,7 +183,7 @@
             </article>
 
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-shvetsa-4586718.webp" alt="Laser hair removal treatment session" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-shvetsa-4586718.webp" alt="Laser hair removal treatment session" width="1200" height="800" loading="lazy" fetchpriority="low" decoding="async">
               <div class="treatment-photo-content">
                 <h3>Laser Hair Reduction</h3>
                 <p>Dermatologist-supervised sessions designed for long-term reduction.</p>
@@ -180,7 +191,7 @@
             </article>
 
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-gustavo-fring-7446676.webp" alt="Cosmetology injectable treatment planning" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-gustavo-fring-7446676.webp" alt="Cosmetology injectable treatment planning" width="1200" height="800" loading="lazy" fetchpriority="low" decoding="async">
               <div class="treatment-photo-content">
                 <h3>Botox and Fillers</h3>
                 <p>Evidence-based anti-aging interventions with natural-looking results.</p>
@@ -188,7 +199,7 @@
             </article>
 
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-gustavo-fring-7446672.webp" alt="Hair transplantation clinical procedure" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-gustavo-fring-7446672.webp" alt="Hair transplantation clinical procedure" width="1200" height="800" loading="lazy" fetchpriority="low" decoding="async">
               <div class="treatment-photo-content">
                 <h3>Hair Restoration Planning</h3>
                 <p>Comprehensive scalp assessment and staged medical restoration options.</p>
@@ -196,7 +207,7 @@
             </article>
 
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-gustavo-fring-3985314.webp" alt="Minor dermatosurgery setup in clinic" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-gustavo-fring-3985314.webp" alt="Minor dermatosurgery setup in clinic" width="1200" height="800" loading="lazy" fetchpriority="low" decoding="async">
               <div class="treatment-photo-content">
                 <h3>Minor Dermatosurgery</h3>
                 <p>Mole, wart, cyst, and nail procedures in a sterile clinical setup.</p>
@@ -204,7 +215,7 @@
             </article>
 
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-gustavo-fring-3985305.webp" alt="Clinical skin examination for chronic skin condition" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-gustavo-fring-3985305.webp" alt="Clinical skin examination for chronic skin condition" width="1200" height="800" loading="lazy" fetchpriority="low" decoding="async">
               <div class="treatment-photo-content">
                 <h3>Psoriasis and Eczema Clinic</h3>
                 <p>Long-term control plans to reduce flare-ups and improve skin comfort.</p>
@@ -212,7 +223,7 @@
             </article>
 
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-cottonbro-7581585.webp" alt="Vitiligo diagnosis and treatment consultation" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-cottonbro-7581585.webp" alt="Vitiligo diagnosis and treatment consultation" width="1200" height="800" loading="lazy" fetchpriority="low" decoding="async">
               <div class="treatment-photo-content">
                 <h3>Vitiligo and Pigment Care</h3>
                 <p>Diagnosis-led repigmentation protocols with response tracking.</p>
@@ -220,7 +231,7 @@
             </article>
 
             <article class="treatment-photo-card reveal">
-              <img src="images/pexels-cottonbro-7581091.webp" alt="Clinical skin treatment setup" width="1200" height="800" loading="lazy" fetchpriority="auto" decoding="async">
+              <img src="images/pexels-cottonbro-7581091.webp" alt="Clinical skin treatment setup" width="1200" height="800" loading="lazy" fetchpriority="low" decoding="async">
               <div class="treatment-photo-content">
                 <h3>Skin Health Programs</h3>
                 <p>Personalized treatment pathways for recurring skin concerns.</p>
