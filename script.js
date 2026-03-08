@@ -7,6 +7,11 @@ const CLINIC_INFO = {
   map: "https://goo.gl/maps/WtDzHtQndskutmgf6"
 };
 
+const THIRD_PARTY_CONFIG = {
+  gtmId: "GTM-XXXXXXX",
+  embedScript: ""
+};
+
 const toastElement = document.getElementById("toast");
 
 function showToast(message) {
@@ -233,6 +238,44 @@ function setupReveal() {
   revealElements.forEach((element) => observer.observe(element));
 }
 
+function setupDeferredThirdParty() {
+  // Delay third-party JS so the initial render remains fast.
+  const gtmId = THIRD_PARTY_CONFIG.gtmId;
+  if (!gtmId || gtmId === "GTM-XXXXXXX") {
+    return;
+  }
+
+  let loaded = false;
+  const loadGtm = () => {
+    if (loaded) {
+      return;
+    }
+
+    loaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(gtmId)}`;
+    document.head.appendChild(script);
+
+    if (THIRD_PARTY_CONFIG.embedScript) {
+      const embed = document.createElement("script");
+      embed.defer = true;
+      embed.src = THIRD_PARTY_CONFIG.embedScript;
+      document.body.appendChild(embed);
+    }
+  };
+
+  const triggerEvents = ["pointerdown", "touchstart", "keydown", "scroll"];
+  triggerEvents.forEach((eventName) => {
+    window.addEventListener(eventName, loadGtm, { once: true, passive: true });
+  });
+
+  window.setTimeout(loadGtm, 4000);
+}
+
 setupMobileNav();
 setupSaveContact();
 setupShare();
@@ -240,3 +283,4 @@ setupServiceSearch();
 setupAppointmentForm();
 setupFaqAccordion();
 setupReveal();
+setupDeferredThirdParty();
